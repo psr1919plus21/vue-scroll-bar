@@ -1,0 +1,35 @@
+.v-scroll-bar-wrap {
+  overflow: hidden !important;
+  position: relative;
+}
+
+.v-scroll-bar {
+  background: #eee;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .3s ease;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.v-scroll-bar.v-scroll-bar_no-hide {
+  opacity: .8;
+}
+
+.v-scroll-bar:before {
+  content: '';
+  background: #bbb;
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.v-scroll-bar-wrap:hover > .v-scroll-bar {
+  opacity: .8;
+}
+
+.v-scroll-bar-wrap:hover > .v-scroll-bar:hover {
+  opacity: 1;
+}
